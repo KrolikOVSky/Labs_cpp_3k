@@ -56,18 +56,20 @@ void fifth() {
 
 void sixth() {
     cout << "\n\n*** Sixth question. Default initialization\n";
+    short default_short;
     int default_int;
+    long default_long;
     double default_double;
     bool default_bool;
+    cout << "Default value short: " << default_short << endl;
     cout << "Default value int: " << default_int << endl;
+    cout << "Default value long: " << default_long << endl;
     cout << "Default value double: " << default_double << endl;
     cout << "Default value bool: " << default_bool;
 }
 
-
 const int external_int = 999;
 const string external_string = "External string";
-
 void seventh() {
     static const int static_int = 88;
     static const string static_string = "Static string";
@@ -83,14 +85,22 @@ void seventh() {
 //    auto_string = "000";
 }
 
-
 void eighth() {
     int a = 9;
     int b = -3;
 
     printf("a = %d\nb = %d\na %% b = %d\n", a, b, (a % b));
-    printf("a = %d\nb = %d\n\\b %% a = %d\n", a, b, (b % a));
+    printf("a = %d\nb = %d\nb %% a = %d\n", a, b, (b % a));
+}
 
+void ninth() {
+    int a = 1;
+    int b = 2;
+
+    auto c = b | a | a == b;
+    auto d = b | a | a != b;
+    cout << c << endl;
+    cout << d << endl;
 }
 
 int main() {
@@ -101,7 +111,7 @@ int main() {
 //    fifth();
 //    sixth();
 //    seventh();
-    eighth();
-
+//    eighth();
+//    ninth();
     return 0;
 }
