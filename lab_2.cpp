@@ -8,14 +8,10 @@ private:
     int *array;
     int length;
 public:
-    MyStack(int length) {
-        this->top = -1;
-        this->length = length;
-        this->array = new int[this->length];
-    }
-
     MyStack() {
-        delete[] array;
+        this->top = -1;
+        this->length = 100;
+        this->array = new int[this->length];
     }
 
     int push(int value) {
@@ -23,12 +19,12 @@ public:
         else if (value < 0) return -3;
         else {
             this->array[++top] = value;
-            return -1;
+            return 0;
         }
     }
 
     int pop() {
-        int i = 0;
+        int i;
         if (top >= 0) {
             i = this->array[top--];
             return i;
@@ -47,11 +43,7 @@ public:
 };
 
 int main() {
-
-    int length;
-    cout << "Please enter size of stack: ";
-    cin >> length;
-    auto *numberCollection = new MyStack(length);
+    auto *numberCollection = new MyStack();
 
     for (;;) {
         int number;
